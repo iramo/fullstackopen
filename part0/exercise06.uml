@@ -1,0 +1,15 @@
+note over browser:
+browser executes the event handler
+that listens to the form submit event
+the value in the input field is read and a new JSON-object
+is created and pushed on the local notes-array.
+thereafter a redrawNotes-function is called, which rebuilds a list,
+which contains the rendered notes
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+note over server:
+server receives POST data in JSON-format {content: "Test", date: "2021-12-29T08:43:41.450Z"}
+and stores this in a data.json -file, which resided in the server
+end note
+server-->browser: send status code 201 (Created)
